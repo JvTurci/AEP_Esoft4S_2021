@@ -1,75 +1,50 @@
 package Irrigator;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Ambiente {
 	private String nome;
-	public List<Area> areas = new ArrayList<>();
+	private int numero;
+	public Set<Área> areas = new HashSet<>();
 	
-	public Ambiente(String nome) {
+	public Ambiente(String nome, int numero) {
 		this.nome = nome;
+		this.numero = numero;
 	}
 	
 	public String getNome() {
 		return nome;
 	}
-	
-	public List<Area> getAreas() {
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public Set<Área> getAreas() {
 		return areas;
 	}
 	
-	public void adicionarArea(Area nova) {	
-		this.areas.add(nova);
+	public void adicionarArea(Área novaArea) {
+		this.areas.add(novaArea);
+	}
+	
+	public void retirarArea(Área areaRetirada) {
+		this.areas.remove(areaRetirada);
 	}
 
-	public void removerArea(String areaDesejada) {
-		int posiçãoParaRemover = -1;
-		for(int i=0; i<areas.size();i++) {
-			Area paraExluir = areas.get(i);
-			if(areaDesejada == paraExluir.getNome()) {
-				posiçãoParaRemover = i;
-				break;
-			}
-		}
-		if(posiçãoParaRemover != -1) {
-			areas.remove(posiçãoParaRemover);
-		}
-		
+	@Override
+	public String toString() {
+		return "Nome do Ambiente: " + nome + ", Número do Ambiente:" + numero + ",\n Areas do Ambiente:" + areas + "]";
 	}
 	
-	public int buscaArea(String areaDesejada) {
-		int posiçãoParaBuscar = -1;
-		for(int i=0; i<areas.size();i++) {
-			Area paraEncontar = areas.get(i);
-			if(areaDesejada == paraEncontar.getNome()) {
-				posiçãoParaBuscar = i;
-				break;
-			}
-		}
-		return posiçãoParaBuscar;
-		
-	}
 	
-	public void apresentarArea(String areaDesejada) {
-		int posiçãoParaPesquisar = -1;
-		Area encontrada = null;
-		for(int i=0; i<areas.size();i++) {
-			Area paraEncontar = areas.get(i);
-			if(areaDesejada == paraEncontar.getNome()) {
-				posiçãoParaPesquisar = i;
-				break;
-			}
-		}
-		
-		if(posiçãoParaPesquisar != -1) {
-			encontrada = areas.get(posiçãoParaPesquisar);
-			System.out.println("Nome da Area: " + encontrada.getNome());
-			System.out.println("Unidade de Medida da Area: " + encontrada.getUnidadeMedida());
-			System.out.println("Percentual de Umidade da Area: " + encontrada.getPercentualDeUmidade());
-		}else {
-			System.out.println("Area não encontrada!");
-		}
-		
-	}
 }

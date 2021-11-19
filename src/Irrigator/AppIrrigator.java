@@ -2,35 +2,59 @@ package Irrigator;
 
 public class AppIrrigator {
     public static void main(String[] args) {
+    	Agricultor Amadeu = new Agricultor("123456654321", "AMADEU SEVERINO SILVA", "AMADEU.SEVERINO@EMAIL.COM", "SEVERINO123");
+    	Agricultor Carlos = new Agricultor("789456987654", "CARLOS HENRIQUE PINHO", "CARLOS.PINHO@EMAIL.COM", "FAZENDAPINHO");
     	
-    	Usuario agricultor01 = new Usuario("Carlos","Gouvea","carlinhosdelas@gmail.com","123456789");
-    	Usuario agricultor02 = new Usuario("Romario","Silva","romarinho14@gmail.com","1111111");
-    	Usuario agricultor03 = new Usuario("Flavin","DoPneu","flavindopneu@gmail.com","123123123");
-    	Usuario agricultor04 = new Usuario("Xaulin","MatadorDePorco","xaulinmatadordeporco@gmail.com","456123000");
+    	Ambiente soja_milho = new Ambiente("Soja e Milho", 1);
+    	Ambiente tomates = new Ambiente("Tomates", 1);
     	
-		Ambiente ambiente01 = new Ambiente("Plantação de Trigo");
-		Ambiente ambiente02 = new Ambiente("Plantação de Soja");
-		Ambiente ambiente03 = new Ambiente("Plantação de Milho");
-		Ambiente ambiente04 = new Ambiente("Plantação de Feijão");
-		
-		agricultor01.adicionarAmbiente(ambiente01);
-		ambiente01.adicionarArea(new Area("Parte Norte","Hectares",70.00));
-		ambiente01.adicionarArea(new Area("Parte Sul","Hectares",85.00));
-		
-		agricultor02.adicionarAmbiente(ambiente02);
-		ambiente02.adicionarArea(new Area("Parte Baixa","Hectares",60.00));
-		ambiente02.adicionarArea(new Area("Parte Alta","Hectares",50.00));
-		
-		agricultor03.adicionarAmbiente(ambiente03);
-		ambiente03.adicionarArea(new Area("1/3","Hectares",70.00));
-		ambiente03.adicionarArea(new Area("2/3 Sul","Hectares",75.00));
-		
-		agricultor04.adicionarAmbiente(ambiente04);
-		ambiente04.adicionarArea(new Area("Total","Hectares",87.00));
-		
-		ambiente01.apresentarArea("Parte Norte");
-		ambiente02.apresentarArea("Parte Baixa");
-		
-		System.out.println("A Area buscada está na posição: " + ambiente01.buscaArea("Parte Norte"));
-	}
+    	Área areaSoja_Milho = new Área(100,"SOJA 2 MESES", 789456);
+    	Área areaTomate = new Área(60,"TOMATE CEREJA", 123456);
+    	
+    	Planta tomateCereja = new Planta(1,"TOMATE CEREJA",96.000);
+    	Planta sojaEdamame = new Planta(2,"SOJA EDAMAME",72.000);
+    	Planta sojaBRS = new Planta(3,"SOJA BRS 7582",105.000);
+    	Planta milhoSafra = new Planta(4,"MILHO SAFRA",100.000);
+    	Planta milhoSafrinha = new Planta(5,"MILHO SAFRINHA",50.000);
+    	
+    	Irrigador irrigadorUm = new Irrigador(1);
+    	Irrigador irrigadorDois = new Irrigador(2);
+    	Irrigador irrigadorTres = new Irrigador(3);
+    	Irrigador irrigadorQuatro = new Irrigador(4);
+    	Irrigador irrigadorCinco = new Irrigador(5);
+    	Irrigador irrigadorSeis = new Irrigador(6);
+    	
+    	SensorDeUmidade sensorUm = new SensorDeUmidade(1,98.234);
+    	SensorDeUmidade sensorDois = new SensorDeUmidade(2,70.004);
+    	SensorDeUmidade sensorTres = new SensorDeUmidade(3,103.711);
+    	
+    	sensorUm.adicionarIrrigador(irrigadorUm);
+    	sensorUm.adicionarIrrigador(irrigadorDois);
+    	
+    	sensorDois.adicionarIrrigador(irrigadorTres);
+    	sensorDois.adicionarIrrigador(irrigadorQuatro);
+    	
+    	sensorTres.adicionarIrrigador(irrigadorCinco);
+    	sensorTres.adicionarIrrigador(irrigadorSeis);
+    	
+    	areaSoja_Milho.adicionarPlanta(sojaEdamame);
+    	areaSoja_Milho.adicionarPlanta(sojaBRS);
+    	areaSoja_Milho.adicionarPlanta(milhoSafra);
+    	areaSoja_Milho.adicionarPlanta(milhoSafrinha);
+    	
+    	areaSoja_Milho.adicionarSensor(sensorDois);
+    	areaSoja_Milho.adicionarSensor(sensorTres);
+    	
+    	areaTomate.adicionarPlanta(tomateCereja);
+    	areaTomate.adicionarSensor(sensorUm);
+    	
+    	soja_milho.adicionarArea(areaSoja_Milho);
+    	tomates.adicionarArea(areaTomate);
+    	
+    	Carlos.adicionarAmbiente(soja_milho);
+    	Amadeu.adicionarAmbiente(tomates);
+    	
+    	System.out.println(Carlos.getAmbientes());
+    	System.out.println(Amadeu.getAmbientes());
+    }
 }
