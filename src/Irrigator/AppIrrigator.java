@@ -1,7 +1,10 @@
 package Irrigator;
 
+import java.util.Scanner;
+
 public class AppIrrigator {
     public static void main(String[] args) {
+    	
     	Agricultor Amadeu = new Agricultor("123456654321", "AMADEU SEVERINO SILVA", "AMADEU.SEVERINO@EMAIL.COM", "SEVERINO123");
     	Agricultor Carlos = new Agricultor("789456987654", "CARLOS HENRIQUE PINHO", "CARLOS.PINHO@EMAIL.COM", "FAZENDAPINHO");
     	
@@ -53,6 +56,12 @@ public class AppIrrigator {
     	
     	Carlos.adicionarAmbiente(soja_milho);
     	Amadeu.adicionarAmbiente(tomates);
+    	
+    	if(areaTomate.getPlantaPeloNome(tomateCereja)) {
+    		System.out.println("Essa área contem essa planta!");
+    	}else {
+    		System.out.println("Essa área não contem essa planta!");
+    	}
     	
     	System.out.println(Carlos.getAmbientes());
     	System.out.println(Amadeu.getAmbientes());

@@ -48,7 +48,10 @@ public class Área {
 	public void setPlantas(Set<Planta> plantas) {
 		this.plantas = plantas;
 	}
-
+	
+	public boolean getPlantaPeloNome(Planta nomeDaPlanta) {
+		return plantas.contains(nomeDaPlanta);
+	}
 	public Set<SensorDeUmidade> getSensores() {
 		return new HashSet<>(sensores);
 	}
