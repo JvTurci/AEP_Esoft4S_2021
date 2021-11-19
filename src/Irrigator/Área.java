@@ -4,41 +4,41 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Área {
-	private int numero;
-	private String nome;
-	private int tamanho; 
+	private int númeroÁrea;
+	private String nomeArea;
+	private int tamanhoArea; 
 	private Set<Planta> plantas= new HashSet<>();
 	private Set<SensorDeUmidade> sensores = new HashSet<>();
 	
 	public Área(int numero, String nome, int tamanho) {
-		this.numero = numero;
-		this.nome = nome;
-		this.tamanho = tamanho;
+		this.númeroÁrea = numero;
+		this.nomeArea = nome;
+		this.tamanhoArea = tamanho;
 	}
 	
-	public int getNumero() {
-		return numero;
+	public int getNúmeroÁrea() {
+		return númeroÁrea;
 	}
 	
-	public void setNumero(int numero) {
+	public void setNúmeroÁrea(int numero) {
 		
-		this.numero =  numero;
+		this.númeroÁrea =  numero;
 	}
 	
-	public String getNome() {
-		return nome;
+	public String getNomeArea() {
+		return nomeArea;
 	}
 	
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeArea(String nome) {
+		this.nomeArea = nome;
 	}
 	
-	public int getTamanho() {
-		return tamanho;
+	public int getTamanhoArea() {
+		return tamanhoArea;
 	}
 	
-	public void setTamanho(int tamanho) {
-		this.tamanho = tamanho;
+	public void setTamanhoArea(int tamanho) {
+		this.tamanhoArea = tamanho;
 	}
 
 	public Set<Planta> getPlantas() {
@@ -75,7 +75,7 @@ public class Área {
 
 	@Override
 	public String toString() {
-		return "[" + "Número da Área: " + numero + ", Nome da Área: " + nome + ", tamanho da Área: " + tamanho
+		return "[" + "Número da Área: " + númeroÁrea + ", Nome da Área: " + nomeArea + ", tamanho da Área: " + tamanhoArea
 				+ ",\n Plantas da Área: " + plantas + ",\n Sensores da Área: " + sensores + "]";
 	}
 	

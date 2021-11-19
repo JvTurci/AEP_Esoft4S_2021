@@ -5,24 +5,24 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Agricultor {
-		private String nome;
+		private String nomeAgricultor;
 		private String cpf;
 		private String email;
 		private String senha;
 		private Set<Ambiente> ambientes = new HashSet<>();
 		
 		public Agricultor(String cpf, String nome, String email, String senha) {
-			this.nome = nome;
+			this.nomeAgricultor = nome;
 			this.cpf = cpf;
 			this.email = email;
 			this.senha = senha;
 		}
-		public String getNome() {
-			return nome;
+		public String getNomeAgricultor() {
+			return nomeAgricultor;
 		}
 
 		public void setNome(String nome) {
-			this.nome = nome;
+			this.nomeAgricultor = nome;
 		}
 
 		public String getCpf() {

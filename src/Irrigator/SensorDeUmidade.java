@@ -4,25 +4,25 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class SensorDeUmidade {
-	private int código;
+	private int idSensor;
 	private double umidade;
 	private Set<Irrigador> irrigadores = new HashSet<>();
 
 	public SensorDeUmidade(int código, double umidade) {
-		this.código = código;
+		this.idSensor = código;
 		this.umidade = umidade;
 	}
 	
-	public int getCódigo() {
-		return código;
+	public int getIdSensor() {
+		return idSensor;
 	}
 	
 	public double getUmidade() {
 		return umidade;
 	}
 	
-	public void setCódigo(int código) {
-		this.código = código;
+	public void setIdSensor(int idSensor) {
+		this.idSensor = idSensor;
 	}
 
 	public void setUmidade(double umidade) {
@@ -47,7 +47,7 @@ public class SensorDeUmidade {
 
 	@Override
 	public String toString() {
-		return "["+ "Código do Sensor:" + código + ", Umidade do Sensor:" + umidade + ", irrigadores:" + irrigadores + "]";
+		return "["+ "Id do Sensor:" + idSensor + ", Umidade do Sensor:" + umidade + ", irrigadores:" + irrigadores + "]";
 	}
 
 }

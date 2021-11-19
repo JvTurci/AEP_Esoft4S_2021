@@ -1,43 +1,43 @@
 package Irrigator;
 
 public class Planta {
-	private int registro;
-	private String nome;
-	private double umidade;
+	private int registroPlanta;
+	private String nomePlanta;
+	private double umidadePlantio;
 	
-	public Planta(int registro, String nome, double umidade) {
-		this.registro = registro;
-		this.nome = nome;
-		this.umidade = umidade;
+	public Planta(int registroPlanta, String nomePlanta, double umidadePlantio) {
+		this.registroPlanta = registroPlanta;
+		this.nomePlanta = nomePlanta;
+		this.umidadePlantio = umidadePlantio;
 	}	
 	
-	public int getRegistro() {
-		return registro;
+	public int getRegistroPlanta() {
+		return registroPlanta;
 	}
 	
-	public void setRegistro(int registro) {
-		this.registro = registro;
+	public void setRegistroPlanta(int registroPlanta) {
+		this.registroPlanta = registroPlanta;
 	}
 	
-	public String getPlanta() {
-		return nome;
+	public String getNomePlanta() {
+		return nomePlanta;
 	}
 	
-	public void setPlanta(String planta) {
-		this.nome = planta;
+	public void setNomePlanta(String nomePlanta) {
+		this.nomePlanta = nomePlanta;
 	}
 	
-	public double getUmidade() {
-		return umidade;
+	public double getUmidadePlantio() {
+		return umidadePlantio;
 	}
 	
-	public void setUmidade(double umidade) {
-		this.umidade = umidade;
+	public void setUmidadePlantio(double umidadePlantio) {
+		this.umidadePlantio = umidadePlantio;
 	}
 
 	@Override
 	public String toString() {
-		return "["+ "Registro da planta: " + registro + ", Noma da planta: " + nome + ", Umidade da planta: " + umidade + "]";
+		return "["+ "Registro da planta: " + registroPlanta + ", Noma da planta: " + nomePlanta + ", Umidade do Plantio: " + umidadePlantio + "]";
 	}
 	
 	

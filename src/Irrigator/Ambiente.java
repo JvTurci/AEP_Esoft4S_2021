@@ -4,29 +4,29 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Ambiente {
-	private String nome;
-	private int numero;
+	private String nomeAmbiente;
+	private int númeroAmbiente;
 	public Set<Área> areas = new HashSet<>();
 	
 	public Ambiente(String nome, int numero) {
-		this.nome = nome;
-		this.numero = numero;
+		this.nomeAmbiente = nome;
+		this.númeroAmbiente = numero;
 	}
 	
-	public String getNome() {
-		return nome;
+	public String getNomeAmbiente() {
+		return nomeAmbiente;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeAmbiente(String nome) {
+		this.nomeAmbiente = nome;
 	}
 
-	public int getNumero() {
-		return numero;
+	public int getNúmeroAmbiente() {
+		return númeroAmbiente;
 	}
 
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void setNúmeroArea(int numero) {
+		this.númeroAmbiente = numero;
 	}
 
 	public Set<Área> getAreas() {
@@ -43,7 +43,7 @@ public class Ambiente {
 
 	@Override
 	public String toString() {
-		return "Nome do Ambiente: " + nome + ", Número do Ambiente:" + numero + ",\n Areas do Ambiente:" + areas + "]";
+		return "Nome do Ambiente: " + nomeAmbiente + ", Número do Ambiente:" + númeroAmbiente + ",\n Areas do Ambiente:" + areas + "]";
 	}
 	
 	
